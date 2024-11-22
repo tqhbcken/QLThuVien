@@ -2,7 +2,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="QuanLiThuVien.Controller.MainPageController" prefWidth="600" prefHeight="400">
+<BorderPane fx:id="mainPane" xmlns:fx="http://javafx.com/fxml" fx:controller="QuanLiThuVien.Controller.MainPageController" prefWidth="1000" prefHeight="800">
     <!-- Thanh menu chính -->
     <top>
         <MenuBar>

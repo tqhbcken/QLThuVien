@@ -14,21 +14,20 @@ import QuanLiThuVien.utils.DatabaseUtils;
 public class BookDAO {
     public static List<Book> getAllBooks() {
         List<Book> books = new ArrayList<>();
-        String sql = "SELECT * FROM Books";
+        String sql = "SELECT * FROM Sach";
         
         try (Connection conn = DatabaseUtils.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Book book = new Book(
-                    rs.getInt("id"),
-                    rs.getString("title"),
-                    rs.getString("author"),
-                    rs.getString("genre"),
-                    rs.getInt("year"),
-                    rs.getString("publisher"),
-                    rs.getFloat("price"),
-                    rs.getDate("dateAdded")
+                    rs.getInt("maSach"),
+                    rs.getString("tenSach"),
+                    rs.getString("tacGia"),
+                    rs.getInt("namXuatBan"),
+                    rs.getString("nhaXuatBan"),
+                    rs.getFloat("triGia"),
+                    rs.getDate("ngayNhap")
                 );
                 books.add(book);
             }
@@ -39,7 +38,7 @@ public class BookDAO {
     }
 
     public static boolean deleteBook(int id) {
-        String sql = "DELETE FROM Books WHERE id = ?";
+        String sql = "DELETE FROM Sach WHERE maSach = ?";
         
         try (Connection conn = DatabaseUtils.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="QuanLiThuVien.Controller.MainPageController" prefWidth="600" prefHeight="400">
+    <!-- Thanh menu chính -->
+    <top>
+        <MenuBar>
+            <Menu text="Hệ thống">
+                <MenuItem text="Đăng xuất" onAction="#handleLogout"/>
+                <MenuItem text="Thoát" onAction="#handleExit"/>
+            </Menu>
+            <Menu text="Chức năng">
+                <MenuItem text="Quản lý sách" onAction="#openBookManagement"/>
+                <MenuItem text="Quản lý độc giả" onAction="#openReaderManagement"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <!-- Khu vực chính -->
+    <center>
+        <VBox spacing="30" alignment="CENTER" style="-fx-padding: 30;">
+            <Label text="Chào mừng đến với hệ thống quản lý thư viện" style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
+            <Button text="Quản lý sách" onAction="#openBookManagement" style="-fx-font-size: 18px; -fx-padding: 12;"/>
+            <Button text="Quản lý độc giả" onAction="#openReaderManagement" style="-fx-font-size: 18px; -fx-padding: 12;"/>
+        </VBox>
+    </center>
+</BorderPane>

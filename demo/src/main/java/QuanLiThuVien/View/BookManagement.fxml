@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuanLiThuVien.Controller.BookManagementController">
+    <children>
+        <Label text="Quản lý sách" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+        <GridPane hgap="10" vgap="10" padding="10">
+            <children>
+                <Label text="Mã sách:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="maSachField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                
+                <Label text="Tên sách:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="tenSachField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                
+                <Label text="Tác giả:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <TextField fx:id="tacGiaField" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                
+                <Label text="Thể loại:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <TextField fx:id="theLoaiField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                
+                <Label text="Năm xuất bản:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                <TextField fx:id="namXuatBanField" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                
+                <Label text="Nhà xuất bản:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                <TextField fx:id="nhaXuatBanField" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+                
+                <Label text="Trị giá:" GridPane.rowIndex="6" GridPane.columnIndex="0" />
+                <TextField fx:id="triGiaField" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+                
+                <Label text="Ngày nhập:" GridPane.rowIndex="7" GridPane.columnIndex="0" />
+                <TextField fx:id="ngayNhapField" GridPane.rowIndex="7" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        
+        <HBox spacing="10" padding="10">
+            <children>
+                <Button text="Thêm" fx:id="addButton" />
+                <Button text="Sửa" fx:id="editButton" />
+                <Button text="Xóa" fx:id="deleteButton" />
+                <Button text="Làm mới" fx:id="refreshButton" />
+            </children>
+        </HBox>
+        
+        <TableView fx:id="bookTable">
+            <columns>
+                <TableColumn text="Mã sách" fx:id="maSachColumn" />
+                <TableColumn text="Tên sách" fx:id="tenSachColumn" />
+                <TableColumn text="Tác giả" fx:id="tacGiaColumn" />
+                <TableColumn text="Thể loại" fx:id="theLoaiColumn" />
+                <TableColumn text="Năm xuất bản" fx:id="namXuatBanColumn" />
+                <TableColumn text="Nhà xuất bản" fx:id="nhaXuatBanColumn" />
+                <TableColumn text="Trị giá" fx:id="triGiaColumn" />
+                <TableColumn text="Ngày nhập" fx:id="ngayNhapColumn" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

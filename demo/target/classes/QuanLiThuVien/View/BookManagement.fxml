@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -41,7 +42,7 @@
                 <TextField fx:id="triGiaField" GridPane.rowIndex="5" GridPane.columnIndex="1" style="-fx-background-radius: 3;"/>
                 
                 <Label text="Ngày nhập:" GridPane.rowIndex="6" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
-                <TextField fx:id="ngayNhapField" GridPane.rowIndex="6" GridPane.columnIndex="1" style="-fx-background-radius: 3;"/>
+                <DatePicker fx:id="ngayNhapField" GridPane.rowIndex="6" GridPane.columnIndex="1" style="-fx-background-radius: 3;"/>
             </children>
         </GridPane>
         
@@ -58,6 +59,9 @@
                     style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"/>
                 <Button text="Làm mới" fx:id="refreshButton" onAction="#handleRefreshButton"
                     style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"/>
+                <TextField fx:id="searchField" prefWidth="300" promptText="Nhập tên, tác giả hoặc năm xuất bản" style="-fx-background-radius: 3;"/>
+                <Button text="Tìm kiếm" fx:id="searchButton" onAction="#handleSearchButton"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5;"/>
             </children>
         </HBox>
         

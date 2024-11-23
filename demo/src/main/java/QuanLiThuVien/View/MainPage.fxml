@@ -1,28 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<BorderPane fx:id="mainPane" xmlns:fx="http://javafx.com/fxml" fx:controller="QuanLiThuVien.Controller.MainPageController" prefWidth="1000" prefHeight="800">
-    <!-- Thanh menu chính -->
+<BorderPane fx:id="mainPane" xmlns:fx="http://javafx.com/fxml" fx:controller="QuanLiThuVien.Controller.MainPageController" prefWidth="1200" prefHeight="800" style="-fx-background-color: #e0f7fa;">
     <top>
-        <MenuBar>
-            <Menu text="Hệ thống">
+        <MenuBar style="-fx-background-color: #00796b; -fx-text-fill: white;">
+            <Menu text="Hệ thống" style="-fx-text-fill: white;">
                 <MenuItem text="Đăng xuất" onAction="#handleLogout"/>
                 <MenuItem text="Thoát" onAction="#handleExit"/>
             </Menu>
-            <Menu text="Chức năng">
+            <Menu text="Quản lý" style="-fx-text-fill: white;">
                 <MenuItem text="Quản lý sách" onAction="#openBookManagement"/>
                 <MenuItem text="Quản lý độc giả" onAction="#openReaderManagement"/>
+            </Menu>
+            <Menu text="Mượn - Trả" style="-fx-text-fill: white;">
+                <MenuItem text="Mượn sách" onAction="#openBorrowBooks"/>
+                <MenuItem text="Trả sách" onAction="#openReturnBooks"/>
+            </Menu>
+            <Menu text="Tài chính" style="-fx-text-fill: white;">
+                <MenuItem text="Quản lý phiếu thu" onAction="#openReceiptManagement"/>
+            </Menu>
+            <Menu text="Báo cáo" style="-fx-text-fill: white;">
+                <MenuItem text="Thống kê mượn trả" onAction="#openBorrowStats"/>
+                <MenuItem text="Thống kê tài chính" onAction="#openFinanceStats"/>
             </Menu>
         </MenuBar>
     </top>
 
-    <!-- Khu vực chính -->
     <center>
-        <VBox spacing="30" alignment="CENTER" style="-fx-padding: 30;">
-            <Label text="Chào mừng đến với hệ thống quản lý thư viện" style="-fx-font-size: 32px; -fx-font-weight: bold;"/>
-            <Button text="Quản lý sách" onAction="#openBookManagement" style="-fx-font-size: 18px; -fx-padding: 12;"/>
-            <Button text="Quản lý độc giả" onAction="#openReaderManagement" style="-fx-font-size: 18px; -fx-padding: 12;"/>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #00796b; -fx-border-width: 2; -fx-border-radius: 5;">
+            <Label text="Chào mừng đến với hệ thống quản lý thư viện" 
+                   style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: #00796b;" alignment="CENTER"/>
+            
+            <GridPane hgap="20" vgap="20" alignment="CENTER">
+                <Button text="Mượn sách" onAction="#openBorrowBooks" 
+                        style="-fx-font-size: 20px; -fx-pref-width: 200; -fx-padding: 15 30; -fx-background-color: #00796b; -fx-text-fill: white; -fx-border-radius: 5;" 
+                        GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        
+                <Button text="Trả sách" onAction="#openReturnBooks"
+                        style="-fx-font-size: 20px; -fx-pref-width: 200; -fx-padding: 15 30; -fx-background-color: #00796b; -fx-text-fill: white; -fx-border-radius: 5;"
+                        GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                <Button text="Quản lý sách" onAction="#openBookManagement"
+                        style="-fx-font-size: 20px; -fx-pref-width: 200; -fx-padding: 15 30; -fx-background-color: #00796b; -fx-text-fill: white; -fx-border-radius: 5;"
+                        GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        
+                <Button text="Quản lý độc giả" onAction="#openReaderManagement"
+                        style="-fx-font-size: 20px; -fx-pref-width: 200; -fx-padding: 15 30; -fx-background-color: #00796b; -fx-text-fill: white; -fx-border-radius: 5;"
+                        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                <Button text="Phiếu thu tiền" onAction="#openReceiptManagement"
+                        style="-fx-font-size: 20px; -fx-pref-width: 200; -fx-padding: 15 30; -fx-background-color: #00796b; -fx-text-fill: white; -fx-border-radius: 5;"
+                        GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        
+                <Button text="Báo cáo thống kê" onAction="#openBorrowStats"
+                        style="-fx-font-size: 20px; -fx-pref-width: 200; -fx-padding: 15 30; -fx-background-color: #00796b; -fx-text-fill: white; -fx-border-radius: 5;"
+                        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
         </VBox>
     </center>
 </BorderPane>

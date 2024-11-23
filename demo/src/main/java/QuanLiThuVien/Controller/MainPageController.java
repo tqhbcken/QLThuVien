@@ -31,6 +31,31 @@ public class MainPageController {
         loadPage("ReaderManagement"); 
     }
 
+    @FXML
+    public void openBorrowBooks(ActionEvent event) {
+        loadPage("BorrowBooksPage");
+    }
+
+    @FXML
+    public void openReturnBooks(ActionEvent event) {
+        loadPage("ReturnBooksPage");
+    }
+
+    @FXML
+    public void openReceiptManagement(ActionEvent event) {
+        loadPage("ReceiptManagementPage");
+    }
+
+    @FXML
+    public void openBorrowStats(ActionEvent event) {
+        loadPage("BorrowStats");
+    }
+
+    @FXML
+    public void openFinanceStats(ActionEvent event) {
+        loadPage("FinanceStats");
+    }
+
     private void loadPage(String pageName) {
         try {
             String resourcePath = "/QuanLiThuVien/View/" + pageName + ".fxml";

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuanLiThuVien.Controller.BorrowBooksPageController" style="-fx-padding: 20;">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Tìm kiếm độc giả:"/>
+            <TextField fx:id="readerSearchField" promptText="Nhập tên hoặc mã độc giả"/>
+            <Button text="Tìm kiếm" onAction="#handleSearchReader"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <SplitPane orientation="HORIZONTAL">
+            <VBox spacing="10">
+                <Label text="Danh sách sách có thể mượn"/>
+                <TableView fx:id="availableBooksTable">
+                    <columns>
+                        <TableColumn text="Mã sách" fx:id="bookIdColumn"/>
+                        <TableColumn text="Tên sách" fx:id="bookNameColumn"/>
+                        <TableColumn text="Tác giả" fx:id="authorColumn"/>
+                    </columns>
+                </TableView>
+            </VBox>
+            
+            <VBox spacing="10">
+                <Label text="Giỏ sách đang chọn mượn"/>
+                <TableView fx:id="selectedBooksTable">
+                    <columns>
+                        <TableColumn text="Mã sách" fx:id="selectedBookIdColumn"/>
+                        <TableColumn text="Tên sách" fx:id="selectedBookNameColumn"/>
+                        <TableColumn text="Tác giả" fx:id="selectedAuthorColumn"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </SplitPane>
+    </center>
+    
+    <bottom>
+        <VBox spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Ngày mượn:"/>
+                <DatePicker fx:id="borrowDatePicker"/>
+                <Label text="Ngày hẹn trả:"/>
+                <DatePicker fx:id="returnDatePicker"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Số lượng sách:"/>
+                <Label fx:id="bookCountLabel" text="0"/>
+            </HBox>
+            <Button text="Xác nhận mượn sách" onAction="#handleConfirmBorrow" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </bottom>
+</BorderPane> 

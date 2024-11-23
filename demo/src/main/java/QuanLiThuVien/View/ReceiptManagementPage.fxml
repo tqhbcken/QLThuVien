@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuanLiThuVien.Controller.ReceiptManagementPageController" style="-fx-padding: 20;">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Tìm kiếm phiếu thu:"/>
+            <TextField fx:id="receiptSearchField" promptText="Nhập mã phiếu hoặc tên độc giả"/>
+            <Button text="Tìm kiếm" onAction="#handleSearchReceipt"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <TableView fx:id="receiptTable">
+            <columns>
+                <TableColumn text="Mã phiếu" fx:id="receiptIdColumn"/>
+                <TableColumn text="Độc giả" fx:id="readerColumn"/>
+                <TableColumn text="Nhân viên thu" fx:id="staffColumn"/>
+                <TableColumn text="Số tiền nợ" fx:id="debtAmountColumn"/>
+                <TableColumn text="Số tiền thu" fx:id="collectedAmountColumn"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane> 

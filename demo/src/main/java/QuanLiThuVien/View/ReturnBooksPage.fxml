@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="QuanLiThuVien.Controller.ReturnBooksPageController" style="-fx-padding: 20;">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Tìm kiếm phiếu mượn:"/>
+            <TextField fx:id="borrowSearchField" promptText="Nhập mã phiếu mượn"/>
+            <Button text="Tìm kiếm" onAction="#handleSearchBorrow"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Danh sách sách đang được mượn"/>
+            <TableView fx:id="borrowedBooksTable">
+                <columns>
+                    <TableColumn text="Mã sách" fx:id="borrowedBookIdColumn"/>
+                    <TableColumn text="Tên sách" fx:id="borrowedBookNameColumn"/>
+                    <TableColumn text="Tác giả" fx:id="borrowedAuthorColumn"/>
+                    <TableColumn text="Ngày mượn" fx:id="borrowedDateColumn"/>
+                    <TableColumn text="Ngày hẹn trả" fx:id="dueDateColumn"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <VBox spacing="10">
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Phí phạt:"/>
+                <Label fx:id="penaltyFeeLabel" text="0"/>
+            </HBox>
+            <Button text="Xác nhận trả sách" onAction="#handleConfirmReturn" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+    </bottom>
+</BorderPane>

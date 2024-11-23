@@ -12,7 +12,7 @@ public class Book {
     private float triGia;
     private Date ngayNhap;
 
-    public Book(int maSach, String tenSach, String tacGia, int namXuatBan, String nhaXuatBan, float triGia, Date ngayNhap) {
+    public Book(int maSach,String tenSach, String tacGia, int namXuatBan, String nhaXuatBan, float triGia, Date ngayNhap) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tacGia = tacGia;
